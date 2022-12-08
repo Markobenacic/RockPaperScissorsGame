@@ -13,6 +13,8 @@
 		A7B12B5D29424A2200AE7E11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B12B5B29424A2200AE7E11 /* Main.storyboard */; };
 		A7B12B5F29424A2300AE7E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7B12B5E29424A2300AE7E11 /* Assets.xcassets */; };
 		A7B12B6229424A2300AE7E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B12B6029424A2300AE7E11 /* LaunchScreen.storyboard */; };
+		A7B12B6A29424AFA00AE7E11 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12B6929424AFA00AE7E11 /* Images.swift */; };
+		A7B12B6E29424F0300AE7E11 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12B6D29424F0300AE7E11 /* ConfettiView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A7B12B5E29424A2300AE7E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7B12B6129424A2300AE7E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7B12B6329424A2300AE7E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7B12B6929424AFA00AE7E11 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		A7B12B6D29424F0300AE7E11 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 		A7B12B4929424A2200AE7E11 = {
 			isa = PBXGroup;
 			children = (
+				A7B12B6D29424F0300AE7E11 /* ConfettiView.swift */,
 				A7B12B5429424A2200AE7E11 /* RockPaperScissors */,
 				A7B12B5329424A2200AE7E11 /* Products */,
 			);
@@ -63,6 +68,7 @@
 				A7B12B5E29424A2300AE7E11 /* Assets.xcassets */,
 				A7B12B6029424A2300AE7E11 /* LaunchScreen.storyboard */,
 				A7B12B6329424A2300AE7E11 /* Info.plist */,
+				A7B12B6929424AFA00AE7E11 /* Images.swift */,
 			);
 			path = RockPaperScissors;
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7B12B5A29424A2200AE7E11 /* ViewController.swift in Sources */,
+				A7B12B6A29424AFA00AE7E11 /* Images.swift in Sources */,
 				A7B12B5629424A2200AE7E11 /* AppDelegate.swift in Sources */,
+				A7B12B6E29424F0300AE7E11 /* ConfettiView.swift in Sources */,
 				A7B12B5829424A2200AE7E11 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +303,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +332,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

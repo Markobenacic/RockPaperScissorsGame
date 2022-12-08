@@ -7,11 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
+
+    // MARK: - Views
+    private let gameContainerView: UIView = UIView()
+    private let StartGameButton: UIButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupUI()
+
+    }
+
+    private func setupUI() {
+
     }
 
 
