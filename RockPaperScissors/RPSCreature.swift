@@ -71,7 +71,7 @@ public class RPSCreature: Identifiable {
 }
 
 
-enum RPSCreatureType {
+public enum RPSCreatureType {
     case rock
     case paper
     case scissors

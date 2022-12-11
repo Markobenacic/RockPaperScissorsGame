@@ -7,6 +7,7 @@
 
 import UIKit
 
+// TODO: settings class, button to end game
 class MainViewController: UIViewController {
 
     // MARK: - constants
@@ -16,10 +17,6 @@ class MainViewController: UIViewController {
     private let gameContainerView: UIView = UIView()
     private let startGameButton: UIButton = UIButton(type: .system)
     private var creatureViews: [UIImageView] = []
-
-//    private var scissors: [RPSCreature]
-//    private var rocks: [RPSCreature]
-//    private var papers: [RPSCreature]
 
     private var creatures: [RPSCreature]?
     private var engine: RPSEngine?
@@ -161,14 +158,13 @@ extension MainViewController: RPSEngineDelegate {
 
     func updateCreatures(with creatures: [RPSCreature]) {
         self.creatures = creatures
-
         updateRpsCreaturesUI()
     }
 
-    func gameEnded() {
-
-        print("gotova igra")
-
+    func gameEnded(winner: RPSCreatureType) {
+        let confettiView = ConfettiView(frame: view.frame, type: winner)
+        gameContainerView.subviews.forEach { $0.removeFromSuperview() }
+        gameContainerView.addSubview(confettiView)
     }
 
 

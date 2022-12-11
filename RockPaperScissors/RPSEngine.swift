@@ -46,10 +46,7 @@ class RPSEngine {
         // for each creature figure out where it will go:
         // find closest creature you can eat and go 1 step in their direction
         // if there is nothing you can eat, move random
-
         // if you touched a creature: if it beats you: change type, if it doesnt: do nothing
-
-
         for creature in rpsCreatures {
             if let closestFood = findClosestFoodTo(creature) {
                 creature.moveTo(creature: closestFood)
@@ -76,35 +73,39 @@ class RPSEngine {
         }
         delegate?.updateCreatures(with: rpsCreatures)
 
-        if allCreaturesAreTheSame() {
-            stopTimer()
+        if let winner = checkIfCreaturesAreSameAndReturnType() {
+            endGame(winner: winner)
         }
 
     }
 
+    public func endGame(winner: RPSCreatureType) {
+        stopTimer()
+        delegate?.gameEnded(winner: winner)
+    }
 
 }
 
 public protocol RPSEngineDelegate {
     func updateCreatures(with creatures: [RPSCreature])
-    func gameEnded()
+    func gameEnded(winner: RPSCreatureType)
     func updateCreature(_ creature: RPSCreature)
 }
 
 // MARK: - game helper functions
 extension RPSEngine {
 
-    private func allCreaturesAreTheSame() -> Bool {
-          guard !rpsCreatures.isEmpty else { return false }
+    private func checkIfCreaturesAreSameAndReturnType() -> RPSCreatureType? {
+          guard !rpsCreatures.isEmpty else { return nil }
 
           let firstElementTypeValue = (rpsCreatures.first)?.type
           for element in rpsCreatures {
             if element.type != firstElementTypeValue {
-              return false
+              return nil
             }
           }
 
-          return true
+          return firstElementTypeValue
     }
 
     //returns closest food, if there is no food return nil

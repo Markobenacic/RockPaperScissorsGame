@@ -11,12 +11,20 @@ import UIKit
 class ConfettiView: UIView {
 
     private var emitter: CAEmitterLayer!
+    private var type: RPSCreatureType?
 
-    override init(frame: CGRect) {
+    init(frame: CGRect, type: RPSCreatureType) {
+        self.type = type
         super.init(frame: frame)
         setup()
     }
 
+//    override init(frame: CGRect) {
+//        self.type = .scissors
+//        super.init(frame: frame)
+//        setup()
+//    }
+//
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
@@ -36,9 +44,9 @@ class ConfettiView: UIView {
 
         for color in colors {
             let cell = CAEmitterCell()
-            cell.contents = UIImage(named: "confetti")!.cgImage
-            cell.birthRate = 6
-            cell.lifetime = 14
+            cell.contents = Images.image(type: type ?? .scissors)!.cgImage
+            cell.birthRate = 2
+            cell.lifetime = 10
             cell.color = color
             cell.velocity = CGFloat(Int.random(in: 100...200))
             cell.velocityRange = 50
