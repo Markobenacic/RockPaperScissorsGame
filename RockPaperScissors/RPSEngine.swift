@@ -149,12 +149,9 @@ extension RPSEngine {
     }
 
     private func distanceBetween(first: RPSCreature, second: RPSCreature) -> CGFloat{
-
         let difX = first.position.x - second.position.x
         let difY = first.position.y - second.position.y
 
         return sqrt(difX*difX + difY*difY)
-
-
     }
 }

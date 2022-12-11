@@ -19,10 +19,6 @@ class MainViewController: UIViewController {
     private let newGameButton = UIButton(type: .system)
     private var creatureViews: [UIImageView] = []
     private var winnerLabel = UILabel()
-//
-//    private let paperImage = Images.imageFrom(emoji: RPSCreatureType.paper.emoji)
-//    private let scissorsImage = Images.imageFrom(emoji: RPSCreatureType.scissors.emoji)
-//    private let rockImage = Images.imageFrom(emoji: RPSCreatureType.rock.emoji)
 
     private var creatures: [RPSCreature]?
     private var engine: RPSEngine?
@@ -38,17 +34,12 @@ class MainViewController: UIViewController {
         engine?.delegate = self
         setupUI()
         setupListeners()
-
     }
 
     private func addNavigationBar() {
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44))
         view.addSubview(navBar)
-
-        let navItem = UINavigationItem(title: "SomeTitle")
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
-        navItem.rightBarButtonItem = doneItem
-
+        let navItem = UINavigationItem(title: "")
         navBar.setItems([navItem], animated: false)
     }
 
