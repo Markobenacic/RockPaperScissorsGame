@@ -7,7 +7,7 @@
 
 import UIKit
 
-// TODO: settings class, button to end game, option to add creatures with a tap
+// TODO: settings class, button to end game, option to add creatures with a tap, fix memory issue
 class MainViewController: UIViewController {
 
     // MARK: - constants
@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addNavigationBar()
-        creatures = createRandomCreatures(maxX: view.frame.maxX, maxY: view.frame.maxY)
+        creatures = createRandomCreatures(maxX: view.frame.maxX, minY: 200 , maxY: view.frame.maxY - 200)
 
         if let creatures {
             engine = RPSEngine(maxX: view.frame.maxX, maxY: view.frame.maxY, rpsCreatures: creatures)
@@ -157,25 +157,25 @@ class MainViewController: UIViewController {
 
 // MARK: - helper functions
 extension MainViewController {
-    func createRandomCreatures(maxX: CGFloat, maxY: CGFloat) -> [RPSCreature] {
+    func createRandomCreatures(maxX: CGFloat, minY: CGFloat, maxY: CGFloat) -> [RPSCreature] {
         var creatures: [RPSCreature] = []
         for _ in 1...15 {
             let x = CGFloat.random(in: 0...maxX)
-            let y = CGFloat.random(in: 0...maxY)
+            let y = CGFloat.random(in: minY...maxY)
 
             creatures.append(RPSCreature(type: .paper, position: CGPoint(x: x, y: y)))
         }
 
         for _ in 1...15 {
             let x = CGFloat.random(in: 0...maxX)
-            let y = CGFloat.random(in: 0...maxY)
+            let y = CGFloat.random(in: minY...maxY)
 
             creatures.append(RPSCreature(type: .rock, position: CGPoint(x: x, y: y)))
         }
 
         for _ in 1...15 {
             let x = CGFloat.random(in: 0...maxX)
-            let y = CGFloat.random(in: 0...maxY)
+            let y = CGFloat.random(in: minY...maxY)
 
             creatures.append(RPSCreature(type: .scissors, position: CGPoint(x: x, y: y)))
         }
