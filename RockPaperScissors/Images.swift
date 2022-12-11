@@ -9,19 +9,19 @@ import Foundation
 import UIKit
 
 public class Images {
+
     static func image(name: String) -> UIImage? {
             return UIImage(systemName: name)
         }
 
-    public var scissors: UIImage? {
-        return Images.image(name: "scissors")
-    }
-
-    public var rock: UIImage? {
-        return Images.image(name: "rock")
-    }
-
-    public var paper: UIImage? {
-        return Images.image(name: "paper")
+    static func image(type: RPSCreatureType) ->  UIImage? {
+        switch type {
+        case .rock:
+            return Images.image(name: "cloud.fill")
+        case .paper:
+            return Images.image(name: "paperplane.fill")
+        case .scissors:
+            return Images.image(name: "scissors")
+        }
     }
 }
