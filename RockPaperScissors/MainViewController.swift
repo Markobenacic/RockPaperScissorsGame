@@ -50,11 +50,25 @@ class MainViewController: UIViewController {
 
     private func setupListeners() {
         startGameButton.addTarget(self, action: #selector(startGameTapped), for: .touchUpInside)
+        newGameButton.addTarget(self, action: #selector(newGameTapped), for: .touchUpInside)
     }
 
     @objc func startGameTapped() {
         startGameButton.removeFromSuperview()
         engine?.startGame()
+    }
+
+    @objc func newGameTapped() {
+        gameContainerView.removeFromSuperview()
+        creatures = createRandomCreatures(maxX: view.frame.maxX, minY: 200 , maxY: view.frame.maxY - 200)
+
+        if let creatures {
+            engine = RPSEngine(maxX: view.frame.maxX, maxY: view.frame.maxY, rpsCreatures: creatures)
+        }
+
+        engine?.delegate = self
+        setupUI()
+        
     }
 
     private func setupUI() {
