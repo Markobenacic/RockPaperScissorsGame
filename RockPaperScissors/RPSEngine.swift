@@ -8,6 +8,8 @@
 import Foundation
 
 class RPSEngine {
+
+    //movement speed isnt one source of truth, make a settings singleton?
     private let movementSpeed: CGFloat = 1
 
     private let rpsCreatures: [RPSCreature]
@@ -28,7 +30,7 @@ class RPSEngine {
     private var timer: Timer?
 
     func startGame() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { [weak self] _ in
             self?.update()
         }
 
@@ -53,6 +55,7 @@ class RPSEngine {
                 creature.moveTo(creature: closestFood)
                 if distanceBetween(first: creature, second: closestFood) < 10.0 {
                     closestFood.type = creature.type
+                    playSound(creature.type.asString)
                     delegate?.updateCreature(closestFood)
                 }
             } else {

@@ -64,5 +64,17 @@ enum RPSCreatureType {
     case rock
     case paper
     case scissors
+
+    var asString: String {
+        switch self {
+
+        case .rock:
+            return "rock"
+        case .paper:
+            return "paper"
+        case .scissors:
+            return "scissors"
+        }
+    }
 }
 
