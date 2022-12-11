@@ -51,9 +51,9 @@ public class RPSCreature: Identifiable {
         let multiplierX = Double(Int.random(in: -1...1))
         let multiplierY = Double(Int.random(in: -1...1))
 
-        position.x = multiplierX * movementSpeed
+        position.x = position.x + multiplierX * movementSpeed
 
-        position.y = multiplierY * movementSpeed
+        position.y = position.y + multiplierY * movementSpeed
 
     }
 
