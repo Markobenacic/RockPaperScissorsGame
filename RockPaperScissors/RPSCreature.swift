@@ -38,11 +38,22 @@ public class RPSCreature: Identifiable {
         let random = Int.random(in: 0...1)
 
         if random == 0 {
+            //take a step in the right direction
             let stepX = (position.x - creature.position.x) < 0 ? movementSpeed : -movementSpeed
             position.x = position.x + stepX
+
+            // random step in the other axis just for the sake of a better gameplay feeling
+            let multiplier = Double(Int.random(in: -1...1))
+            position.y = position.y + multiplier * movementSpeed
+
         } else {
+            //take a step in the right direction
             let stepY = (position.y - creature.position.y) < 0 ? movementSpeed : -movementSpeed
             position.y = position.y + stepY
+
+            // random step in the other axis just for the sake of a better gameplay feeling
+            let multiplier = Double(Int.random(in: -1...1))
+            position.x = position.x + multiplier * movementSpeed
         }
 
     }
