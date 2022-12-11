@@ -19,6 +19,10 @@ class MainViewController: UIViewController {
     private let newGameButton = UIButton(type: .system)
     private var creatureViews: [UIImageView] = []
     private var winnerLabel = UILabel()
+//
+//    private let paperImage = Images.imageFrom(emoji: RPSCreatureType.paper.emoji)
+//    private let scissorsImage = Images.imageFrom(emoji: RPSCreatureType.scissors.emoji)
+//    private let rockImage = Images.imageFrom(emoji: RPSCreatureType.rock.emoji)
 
     private var creatures: [RPSCreature]?
     private var engine: RPSEngine?
@@ -81,14 +85,14 @@ class MainViewController: UIViewController {
         gameContainerView.subviews.forEach { subview in
             subview.removeFromSuperview()
         }
+        creatureViews.removeAll()
 
         creatures?.forEach({ creature in
             //postavi sliku
             //stavi ga u gameContainerView
             //postavi poziciju
-        //    let creatureView = UIImageView(image: Images.image(type: creature.type))
+//            let creatureView = UIImageView(image: Images.image(type: creature.type))
             let creatureView = UIImageView(image: Images.imageFrom(emoji: creature.type.emoji))
-//            creatureView.tintColor = .black
             creatureView.tag = creature.id
             creatureViews.append(creatureView)
             gameContainerView.addSubview(creatureView)
@@ -130,9 +134,10 @@ class MainViewController: UIViewController {
 
     private func setupGameEndedUI(winner: RPSCreatureType) {
         let confettiView = ConfettiView(frame: view.frame, type: winner)
-        gameContainerView.subviews.forEach { $0.removeFromSuperview() }
+//        gameContainerView.subviews.forEach { $0.removeFromSuperview() }
         gameContainerView.addSubview(confettiView)
 
+        confettiView.layer.opacity = 0.3
 
         newGameButton.setTitle("New Game", for: .normal)
         newGameButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
