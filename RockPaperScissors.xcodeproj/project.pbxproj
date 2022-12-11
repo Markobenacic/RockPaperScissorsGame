@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A77D03E229456D3700445CDE /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D03E129456D3700445CDE /* SoundPlayer.swift */; };
-		A77D03E82945713F00445CDE /* rock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A77D03E52945713F00445CDE /* rock.mp3 */; };
-		A77D03E92945713F00445CDE /* scissors.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A77D03E62945713F00445CDE /* scissors.mp3 */; };
-		A77D03EA2945713F00445CDE /* paper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A77D03E72945713F00445CDE /* paper.mp3 */; };
+		A77D03E82945713F00445CDE /* Rock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A77D03E52945713F00445CDE /* Rock.mp3 */; };
+		A77D03E92945713F00445CDE /* Scissors.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A77D03E62945713F00445CDE /* Scissors.mp3 */; };
+		A77D03EA2945713F00445CDE /* Paper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A77D03E72945713F00445CDE /* Paper.mp3 */; };
+		A7953A4A2946257D00A1CA3F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7953A492946257D00A1CA3F /* String+Extensions.swift */; };
 		A7B12B5629424A2200AE7E11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12B5529424A2200AE7E11 /* AppDelegate.swift */; };
 		A7B12B5829424A2200AE7E11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12B5729424A2200AE7E11 /* SceneDelegate.swift */; };
 		A7B12B5A29424A2200AE7E11 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12B5929424A2200AE7E11 /* MainViewController.swift */; };
@@ -25,9 +26,10 @@
 
 /* Begin PBXFileReference section */
 		A77D03E129456D3700445CDE /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		A77D03E52945713F00445CDE /* rock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rock.mp3; sourceTree = "<group>"; };
-		A77D03E62945713F00445CDE /* scissors.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = scissors.mp3; sourceTree = "<group>"; };
-		A77D03E72945713F00445CDE /* paper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = paper.mp3; sourceTree = "<group>"; };
+		A77D03E52945713F00445CDE /* Rock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rock.mp3; sourceTree = "<group>"; };
+		A77D03E62945713F00445CDE /* Scissors.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Scissors.mp3; sourceTree = "<group>"; };
+		A77D03E72945713F00445CDE /* Paper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Paper.mp3; sourceTree = "<group>"; };
+		A7953A492946257D00A1CA3F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A7B12B5229424A2200AE7E11 /* RockPaperScissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockPaperScissors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B12B5529424A2200AE7E11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7B12B5729424A2200AE7E11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,9 +58,9 @@
 		A77D03E42945712A00445CDE /* SoundEffects */ = {
 			isa = PBXGroup;
 			children = (
-				A77D03E72945713F00445CDE /* paper.mp3 */,
-				A77D03E52945713F00445CDE /* rock.mp3 */,
-				A77D03E62945713F00445CDE /* scissors.mp3 */,
+				A77D03E72945713F00445CDE /* Paper.mp3 */,
+				A77D03E52945713F00445CDE /* Rock.mp3 */,
+				A77D03E62945713F00445CDE /* Scissors.mp3 */,
 			);
 			path = SoundEffects;
 			sourceTree = "<group>";
@@ -95,6 +97,7 @@
 				A7B12B6029424A2300AE7E11 /* LaunchScreen.storyboard */,
 				A7B12B6329424A2300AE7E11 /* Info.plist */,
 				A7B12B6929424AFA00AE7E11 /* Images.swift */,
+				A7953A492946257D00A1CA3F /* String+Extensions.swift */,
 			);
 			path = RockPaperScissors;
 			sourceTree = "<group>";
@@ -158,11 +161,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7B12B6229424A2300AE7E11 /* LaunchScreen.storyboard in Resources */,
-				A77D03E82945713F00445CDE /* rock.mp3 in Resources */,
+				A77D03E82945713F00445CDE /* Rock.mp3 in Resources */,
 				A7B12B5F29424A2300AE7E11 /* Assets.xcassets in Resources */,
-				A77D03E92945713F00445CDE /* scissors.mp3 in Resources */,
+				A77D03E92945713F00445CDE /* Scissors.mp3 in Resources */,
 				A7B12B5D29424A2200AE7E11 /* Main.storyboard in Resources */,
-				A77D03EA2945713F00445CDE /* paper.mp3 in Resources */,
+				A77D03EA2945713F00445CDE /* Paper.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +180,7 @@
 				A7B12B6A29424AFA00AE7E11 /* Images.swift in Sources */,
 				A77D03E229456D3700445CDE /* SoundPlayer.swift in Sources */,
 				A7B12B7029425BF800AE7E11 /* RPSCreature.swift in Sources */,
+				A7953A4A2946257D00A1CA3F /* String+Extensions.swift in Sources */,
 				A7B12B5629424A2200AE7E11 /* AppDelegate.swift in Sources */,
 				A7B12B722942605100AE7E11 /* RPSEngine.swift in Sources */,
 				A7B12B6E29424F0300AE7E11 /* ConfettiView.swift in Sources */,

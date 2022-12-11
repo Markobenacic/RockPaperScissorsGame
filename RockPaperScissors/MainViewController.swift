@@ -7,7 +7,7 @@
 
 import UIKit
 
-// TODO: settings class, button to end game
+// TODO: settings class, button to end game, option to add creatures with a tap
 class MainViewController: UIViewController {
 
     // MARK: - constants
@@ -15,8 +15,10 @@ class MainViewController: UIViewController {
 
     // MARK: - Views
     private let gameContainerView: UIView = UIView()
-    private let startGameButton: UIButton = UIButton(type: .system)
+    private let startGameButton = UIButton(type: .system)
+    private let newGameButton = UIButton(type: .system)
     private var creatureViews: [UIImageView] = []
+    private var winnerLabel = UILabel()
 
     private var creatures: [RPSCreature]?
     private var engine: RPSEngine?
@@ -70,8 +72,9 @@ class MainViewController: UIViewController {
             //postavi sliku
             //stavi ga u gameContainerView
             //postavi poziciju
-            let creatureView = UIImageView(image: Images.image(type: creature.type))
-            creatureView.tintColor = .black
+        //    let creatureView = UIImageView(image: Images.image(type: creature.type))
+            let creatureView = UIImageView(image: Images.imageFrom(emoji: creature.type.emoji))
+//            creatureView.tintColor = .black
             creatureView.tag = creature.id
             creatureViews.append(creatureView)
             gameContainerView.addSubview(creatureView)
@@ -82,7 +85,7 @@ class MainViewController: UIViewController {
 
     private func setupGameContainerViewUI() {
         view.addSubview(gameContainerView)
-        gameContainerView.frame = view.bounds
+        //gameContainerView.frame = view.bounds
         gameContainerView.backgroundColor = .white
 
         let safeAreaInsets = self.view.safeAreaInsets
@@ -111,6 +114,45 @@ class MainViewController: UIViewController {
         ])
     }
 
+    private func setupGameEndedUI(winner: RPSCreatureType) {
+        let confettiView = ConfettiView(frame: view.frame, type: winner)
+        gameContainerView.subviews.forEach { $0.removeFromSuperview() }
+        gameContainerView.addSubview(confettiView)
+
+
+        newGameButton.setTitle("New Game", for: .normal)
+        newGameButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        newGameButton.layer.cornerRadius = 15
+        newGameButton.backgroundColor = .blue
+        newGameButton.setTitleColor(.white, for: .normal)
+
+        gameContainerView.addSubview(newGameButton)
+
+        newGameButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            newGameButton.centerXAnchor.constraint(equalTo: self.gameContainerView.centerXAnchor),
+            newGameButton.bottomAnchor.constraint(equalTo: self.gameContainerView.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            newGameButton.widthAnchor.constraint(equalToConstant: 120)
+        ])
+
+
+        winnerLabel.text = "\(winner.asString) wins!!"
+        winnerLabel.textColor = .orange
+        winnerLabel.font = UIFont.boldSystemFont(ofSize: 36)
+        winnerLabel.textAlignment = .center
+        winnerLabel.translatesAutoresizingMaskIntoConstraints = false
+
+    //    winnerLabel.frame = CGRect(x: 0, y: 60, width: 100, height: 21)
+        //winnerLabel.frame = CGRect(x: 0, y: 0, width: 120, height: 36)
+
+        gameContainerView.addSubview(winnerLabel)
+        NSLayoutConstraint.activate([
+            winnerLabel.centerXAnchor.constraint(equalTo: self.gameContainerView.centerXAnchor),
+            winnerLabel.topAnchor.constraint(equalTo: self.gameContainerView.topAnchor, constant: 60),
+            //winnerLabel.widthAnchor.constraint(equalToConstant: 120)
+        ])
+
+    }
 }
 
 // MARK: - helper functions
@@ -162,11 +204,8 @@ extension MainViewController: RPSEngineDelegate {
     }
 
     func gameEnded(winner: RPSCreatureType) {
-        let confettiView = ConfettiView(frame: view.frame, type: winner)
-        gameContainerView.subviews.forEach { $0.removeFromSuperview() }
-        gameContainerView.addSubview(confettiView)
+        setupGameEndedUI(winner: winner)
+
     }
 
-
 }
-

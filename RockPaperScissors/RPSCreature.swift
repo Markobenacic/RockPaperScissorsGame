@@ -78,13 +78,23 @@ public enum RPSCreatureType {
 
     var asString: String {
         switch self {
-
         case .rock:
-            return "rock"
+            return "Rock"
         case .paper:
-            return "paper"
+            return "Paper"
         case .scissors:
-            return "scissors"
+            return "Scissors"
+        }
+    }
+
+    var emoji: String {
+        switch self {
+        case .rock:
+            return "🪨"
+        case .paper:
+            return "📜"
+        case .scissors:
+            return "✂️"
         }
     }
 }

@@ -14,6 +14,10 @@ public class Images {
             return UIImage(systemName: name)
         }
 
+    static func imageFrom(emoji: String) -> UIImage? {
+        return emoji.image()
+    }
+
     static func image(type: RPSCreatureType) ->  UIImage? {
         switch type {
         case .rock:

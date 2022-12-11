@@ -44,7 +44,8 @@ class ConfettiView: UIView {
 
         for color in colors {
             let cell = CAEmitterCell()
-            cell.contents = Images.image(type: type ?? .scissors)!.cgImage
+//            cell.contents = Images.image(type: type ?? .scissors)!.cgImage
+            cell.contents = Images.imageFrom(emoji: type?.emoji ?? "🎉")!.cgImage
             cell.birthRate = 2
             cell.lifetime = 10
             cell.color = color
