@@ -42,6 +42,11 @@ class ConfettiView: UIView {
         var cells = [CAEmitterCell]()
         let colors = [UIColor.red.cgColor, UIColor.green.cgColor, UIColor.blue.cgColor]
 
+//        let colors = [UIColor(red: 161, green: 214, blue: 123, alpha: 1).cgColor,
+//                      UIColor(red: 105, green: 113, blue: 166, alpha: 1).cgColor,
+//                      UIColor(red: 242, green: 213, blue: 139, alpha: 1).cgColor,
+//                      UIColor(red: 219, green: 126, blue: 151, alpha: 1).cgColor]
+
         for color in colors {
             let cell = CAEmitterCell()
 //            cell.contents = Images.image(type: type ?? .scissors)!.cgImage
