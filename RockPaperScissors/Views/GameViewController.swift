@@ -7,8 +7,8 @@
 
 import UIKit
 
-// TODO: settings class, button to end game, option to add creatures with a tap, fix memory issue
-class MainViewController: UIViewController {
+// TODO: settings class, button to end game, option to add creatures with a tap
+class GameViewController: UIViewController, Storyboarded {
 
     // MARK: - constants
     public let creatureSize = CGSize(width: 20, height: 20)
@@ -166,7 +166,7 @@ class MainViewController: UIViewController {
 }
 
 // MARK: - helper functions
-extension MainViewController {
+extension GameViewController {
     func createRandomCreatures(maxX: CGFloat, minY: CGFloat, maxY: CGFloat) -> [RPSCreature] {
         var creatures: [RPSCreature] = []
         for _ in 1...15 {
@@ -194,7 +194,7 @@ extension MainViewController {
     }
 }
 
-extension MainViewController: RPSEngineDelegate {
+extension GameViewController: RPSEngineDelegate {
     func updateCreature(_ creature: RPSCreature) {
         let viewToChange = gameContainerView.viewWithTag(creature.id)
         viewToChange?.removeFromSuperview()
