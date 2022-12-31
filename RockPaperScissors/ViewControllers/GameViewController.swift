@@ -6,15 +6,17 @@
 //
 
 import UIKit
+import SnapKit
 
 // TODO: settings class, button to end game, option to add creatures with a tap
 class GameViewController: UIViewController, Storyboarded {
+    weak var coordinator: MainCoordinator?
 
     // MARK: - constants
     public let creatureSize = CGSize(width: 20, height: 20)
 
     // MARK: - Views
-    private let gameContainerView: UIView = UIView()
+    private var gameContainerView: UIView = UIView()
     private let startGameButton = UIButton(type: .system)
     private let newGameButton = UIButton(type: .system)
     private var creatureViews: [UIImageView] = []
@@ -25,7 +27,6 @@ class GameViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addNavigationBar()
         creatures = createRandomCreatures(maxX: view.frame.maxX, minY: 200 , maxY: view.frame.maxY - 200)
 
         if let creatures {
@@ -34,13 +35,6 @@ class GameViewController: UIViewController, Storyboarded {
         engine?.delegate = self
         setupUI()
         setupListeners()
-    }
-
-    private func addNavigationBar() {
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44))
-        view.addSubview(navBar)
-        let navItem = UINavigationItem(title: "")
-        navBar.setItems([navItem], animated: false)
     }
 
     private func setupListeners() {
@@ -54,7 +48,6 @@ class GameViewController: UIViewController, Storyboarded {
     }
 
     @objc func newGameTapped() {
-        gameContainerView.removeFromSuperview()
         creatures = createRandomCreatures(maxX: view.frame.maxX, minY: 200 , maxY: view.frame.maxY - 200)
 
         if let creatures {
@@ -82,28 +75,22 @@ class GameViewController: UIViewController, Storyboarded {
             //postavi sliku
             //stavi ga u gameContainerView
             //postavi poziciju
-//            let creatureView = UIImageView(image: Images.image(type: creature.type))
             let creatureView = UIImageView(image: Images.imageFrom(emoji: creature.type.emoji))
             creatureView.tag = creature.id
             creatureViews.append(creatureView)
             gameContainerView.addSubview(creatureView)
             creatureView.frame = CGRect(origin: creature.position, size: creatureSize)
-
         })
     }
 
     private func setupGameContainerViewUI() {
+        gameContainerView.removeFromSuperview()
+        gameContainerView = UIView()
         view.addSubview(gameContainerView)
-        //gameContainerView.frame = view.bounds
         gameContainerView.backgroundColor = .white
-
-        let safeAreaInsets = self.view.safeAreaInsets
-        gameContainerView.frame = CGRect(
-            x: safeAreaInsets.left,
-            y: safeAreaInsets.top,
-            width: self.view.frame.width - safeAreaInsets.left - safeAreaInsets.right,
-            height: self.view.frame.height - safeAreaInsets.top - safeAreaInsets.bottom)
-
+        gameContainerView.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
     }
 
     private func setupStartGameButton() {
@@ -151,9 +138,6 @@ class GameViewController: UIViewController, Storyboarded {
         winnerLabel.font = UIFont.boldSystemFont(ofSize: 36)
         winnerLabel.textAlignment = .center
         winnerLabel.translatesAutoresizingMaskIntoConstraints = false
-
-    //    winnerLabel.frame = CGRect(x: 0, y: 60, width: 100, height: 21)
-        //winnerLabel.frame = CGRect(x: 0, y: 0, width: 120, height: 36)
 
         gameContainerView.addSubview(winnerLabel)
         NSLayoutConstraint.activate([
@@ -215,7 +199,7 @@ extension GameViewController: RPSEngineDelegate {
 
     func gameEnded(winner: RPSCreatureType) {
         setupGameEndedUI(winner: winner)
-
+        playSound("Victory_Sound")
     }
 
 }

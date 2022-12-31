@@ -15,6 +15,9 @@
 		A7953A4A2946257D00A1CA3F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7953A492946257D00A1CA3F /* String+Extensions.swift */; };
 		A795B20B295E637D00FFC4C4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795B20A295E637D00FFC4C4 /* Coordinator.swift */; };
 		A795B20D295E6C5800FFC4C4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795B20C295E6C5800FFC4C4 /* MainCoordinator.swift */; };
+		A7A95013295FA2EF006BF902 /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A95012295FA2EF006BF902 /* MainMenuButton.swift */; };
+		A7A95016295FAE43006BF902 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A7A95015295FAE43006BF902 /* SnapKit */; };
+		A7A95019295FC026006BF902 /* Victory_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A7A95018295FC026006BF902 /* Victory_Sound.mp3 */; };
 		A7B12B5629424A2200AE7E11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12B5529424A2200AE7E11 /* AppDelegate.swift */; };
 		A7B12B5A29424A2200AE7E11 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12B5929424A2200AE7E11 /* GameViewController.swift */; };
 		A7B12B5D29424A2200AE7E11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B12B5B29424A2200AE7E11 /* Main.storyboard */; };
@@ -35,6 +38,8 @@
 		A7953A492946257D00A1CA3F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A795B20A295E637D00FFC4C4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A795B20C295E6C5800FFC4C4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		A7A95012295FA2EF006BF902 /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
+		A7A95018295FC026006BF902 /* Victory_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Victory_Sound.mp3; sourceTree = "<group>"; };
 		A7B12B5229424A2200AE7E11 /* RockPaperScissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockPaperScissors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B12B5529424A2200AE7E11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7B12B5929424A2200AE7E11 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A95016295FAE43006BF902 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +68,7 @@
 		A77D03E42945712A00445CDE /* SoundEffects */ = {
 			isa = PBXGroup;
 			children = (
+				A7A95018295FC026006BF902 /* Victory_Sound.mp3 */,
 				A77D03E72945713F00445CDE /* Paper.mp3 */,
 				A77D03E52945713F00445CDE /* Rock.mp3 */,
 				A77D03E62945713F00445CDE /* Scissors.mp3 */,
@@ -72,9 +79,8 @@
 		A795B206295E629A00FFC4C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A71B9128295E725400C9E5DF /* MainMenuViewController.swift */,
 				A7B12B6D29424F0300AE7E11 /* ConfettiView.swift */,
-				A7B12B5929424A2200AE7E11 /* GameViewController.swift */,
+				A7A95012295FA2EF006BF902 /* MainMenuButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +114,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A7A95017295FB8C0006BF902 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7B12B5929424A2200AE7E11 /* GameViewController.swift */,
+				A71B9128295E725400C9E5DF /* MainMenuViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		A7B12B4929424A2200AE7E11 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +143,7 @@
 		A7B12B5429424A2200AE7E11 /* RockPaperScissors */ = {
 			isa = PBXGroup;
 			children = (
+				A7A95017295FB8C0006BF902 /* ViewControllers */,
 				A795B209295E62FF00FFC4C4 /* Extensions */,
 				A795B208295E62E400FFC4C4 /* Navigation */,
 				A795B207295E62CD00FFC4C4 /* Engine */,
@@ -156,6 +172,9 @@
 			dependencies = (
 			);
 			name = RockPaperScissors;
+			packageProductDependencies = (
+				A7A95015295FAE43006BF902 /* SnapKit */,
+			);
 			productName = RockPaperScissors;
 			productReference = A7B12B5229424A2200AE7E11 /* RockPaperScissors.app */;
 			productType = "com.apple.product-type.application";
@@ -184,6 +203,9 @@
 				Base,
 			);
 			mainGroup = A7B12B4929424A2200AE7E11;
+			packageReferences = (
+				A7A95014295FAE43006BF902 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = A7B12B5329424A2200AE7E11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -200,6 +222,7 @@
 			files = (
 				A7B12B6229424A2300AE7E11 /* LaunchScreen.storyboard in Resources */,
 				A77D03E82945713F00445CDE /* Rock.mp3 in Resources */,
+				A7A95019295FC026006BF902 /* Victory_Sound.mp3 in Resources */,
 				A7B12B5F29424A2300AE7E11 /* Assets.xcassets in Resources */,
 				A77D03E92945713F00445CDE /* Scissors.mp3 in Resources */,
 				A7B12B5D29424A2200AE7E11 /* Main.storyboard in Resources */,
@@ -215,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7B12B5A29424A2200AE7E11 /* GameViewController.swift in Sources */,
+				A7A95013295FA2EF006BF902 /* MainMenuButton.swift in Sources */,
 				A7B12B6A29424AFA00AE7E11 /* Images.swift in Sources */,
 				A71B9129295E725400C9E5DF /* MainMenuViewController.swift in Sources */,
 				A795B20B295E637D00FFC4C4 /* Coordinator.swift in Sources */,
@@ -444,6 +468,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A7A95014295FAE43006BF902 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A7A95015295FAE43006BF902 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A7A95014295FAE43006BF902 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A7B12B4A29424A2200AE7E11 /* Project object */;
 }

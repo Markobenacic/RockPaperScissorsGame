@@ -17,8 +17,23 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-//        let vc = MainMenuViewController.create()
-        let vc = GameViewController.create()
+        let vc = MainMenuViewController.create()
+        vc.coordinator = self
+//        let vc = GameViewController.create()
         navigationController.pushViewController(vc, animated: false)
+    }
+
+    func newRandomGame() {
+        let vc = GameViewController.create()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+
+    func newCustomGame() {
+
+    }
+
+    func settings() {
+
     }
 }
