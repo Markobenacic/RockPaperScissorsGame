@@ -98,7 +98,6 @@
 		A795B208295E62E400FFC4C4 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				A7B12B5529424A2200AE7E11 /* AppDelegate.swift */,
 				A795B20A295E637D00FFC4C4 /* Coordinator.swift */,
 				A795B20C295E6C5800FFC4C4 /* MainCoordinator.swift */,
 			);
@@ -143,6 +142,7 @@
 		A7B12B5429424A2200AE7E11 /* RockPaperScissors */ = {
 			isa = PBXGroup;
 			children = (
+				A7B12B5529424A2200AE7E11 /* AppDelegate.swift */,
 				A7A95017295FB8C0006BF902 /* ViewControllers */,
 				A795B209295E62FF00FFC4C4 /* Extensions */,
 				A795B208295E62E400FFC4C4 /* Navigation */,
