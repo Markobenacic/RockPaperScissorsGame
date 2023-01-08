@@ -18,6 +18,7 @@ class MainMenuViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setupUI()
         setupListeners()
     }

@@ -14,7 +14,7 @@ class RPSEngine {
 
     private let rpsCreatures: [RPSCreature]
 
-    public var delegate: RPSEngineDelegate?
+    public weak var delegate: RPSEngineDelegate?
 
     private let maxX: CGFloat
     private let maxY: CGFloat
@@ -86,7 +86,7 @@ class RPSEngine {
 
 }
 
-public protocol RPSEngineDelegate {
+public protocol RPSEngineDelegate: AnyObject{
     func updateCreatures(with creatures: [RPSCreature])
     func gameEnded(winner: RPSCreatureType)
     func updateCreature(_ creature: RPSCreature)
