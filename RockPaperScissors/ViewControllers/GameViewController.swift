@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 // TODO: settings class, button to end game, option to add creatures with a tap
-class GameViewController: UIViewController, Storyboarded {
+class GameViewController: UIViewController, Storyboardable {
     weak var coordinator: MainCoordinator?
 
     // MARK: - constants

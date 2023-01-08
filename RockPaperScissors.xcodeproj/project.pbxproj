@@ -27,6 +27,8 @@
 		A7B12B6E29424F0300AE7E11 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12B6D29424F0300AE7E11 /* ConfettiView.swift */; };
 		A7B12B7029425BF800AE7E11 /* RPSCreature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12B6F29425BF800AE7E11 /* RPSCreature.swift */; };
 		A7B12B722942605100AE7E11 /* RPSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12B712942605100AE7E11 /* RPSEngine.swift */; };
+		A7CB9B6A296B75E000E6086E /* CustomGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB9B69296B75E000E6086E /* CustomGameViewController.swift */; };
+		A7CB9B6C296B765300E6086E /* UIViewController+Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB9B6B296B765300E6086E /* UIViewController+Storyboardable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		A7B12B6D29424F0300AE7E11 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		A7B12B6F29425BF800AE7E11 /* RPSCreature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSCreature.swift; sourceTree = "<group>"; };
 		A7B12B712942605100AE7E11 /* RPSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSEngine.swift; sourceTree = "<group>"; };
+		A7CB9B69296B75E000E6086E /* CustomGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGameViewController.swift; sourceTree = "<group>"; };
+		A7CB9B6B296B765300E6086E /* UIViewController+Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboardable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			children = (
 				A7B12B6929424AFA00AE7E11 /* Images.swift */,
 				A7953A492946257D00A1CA3F /* String+Extensions.swift */,
+				A7CB9B6B296B765300E6086E /* UIViewController+Storyboardable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			children = (
 				A7B12B5929424A2200AE7E11 /* GameViewController.swift */,
 				A71B9128295E725400C9E5DF /* MainMenuViewController.swift */,
+				A7CB9B69296B75E000E6086E /* CustomGameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +243,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7CB9B6A296B75E000E6086E /* CustomGameViewController.swift in Sources */,
+				A7CB9B6C296B765300E6086E /* UIViewController+Storyboardable.swift in Sources */,
 				A7B12B5A29424A2200AE7E11 /* GameViewController.swift in Sources */,
 				A7A95013295FA2EF006BF902 /* MainMenuButton.swift in Sources */,
 				A7B12B6A29424AFA00AE7E11 /* Images.swift in Sources */,

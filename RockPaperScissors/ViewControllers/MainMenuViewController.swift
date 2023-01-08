@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainMenuViewController: UIViewController, Storyboarded {
+class MainMenuViewController: UIViewController, Storyboardable {
     weak var coordinator: MainCoordinator?
 
     let randomGameButton = MainMenuButton()
