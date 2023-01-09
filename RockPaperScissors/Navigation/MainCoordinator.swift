@@ -30,7 +30,9 @@ class MainCoordinator: Coordinator {
     }
 
     func newCustomGame() {
-
+        let vc = CustomGameViewController.create()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
     }
 
     func settings() {

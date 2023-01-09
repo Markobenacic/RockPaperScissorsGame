@@ -15,7 +15,6 @@ class MainMenuViewController: UIViewController, Storyboardable {
     let customGameButton = MainMenuButton()
     let settingsButton = MainMenuButton()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -56,20 +55,17 @@ class MainMenuViewController: UIViewController, Storyboardable {
 
     private func setupListeners() {
         randomGameButton.addTarget(self, action: #selector(randomGameTapped), for: .touchUpInside)
+        customGameButton.addTarget(self, action: #selector(customGameTapped), for: .touchUpInside)
         // TODO: custom game
     }
     
     @objc func randomGameTapped() {
         coordinator?.newRandomGame()
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func customGameTapped() {
+        coordinator?.newCustomGame()
     }
-    */
+
 
 }

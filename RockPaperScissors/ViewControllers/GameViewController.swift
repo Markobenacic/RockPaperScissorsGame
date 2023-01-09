@@ -12,9 +12,6 @@ import SnapKit
 class GameViewController: UIViewController, Storyboardable {
     weak var coordinator: MainCoordinator?
 
-    // MARK: - constants
-    public let creatureSize = CGSize(width: 20, height: 20)
-
     // MARK: - Views
     private var gameContainerView: UIView = UIView()
     private let startGameButton = UIButton(type: .system)
@@ -79,7 +76,7 @@ class GameViewController: UIViewController, Storyboardable {
             creatureView.tag = creature.id
             creatureViews.append(creatureView)
             gameContainerView.addSubview(creatureView)
-            creatureView.frame = CGRect(origin: creature.position, size: creatureSize)
+            creatureView.frame = CGRect(origin: creature.position, size: Constants.creatureSize)
         })
     }
 
@@ -188,7 +185,7 @@ extension GameViewController: RPSEngineDelegate {
         creatureView.tag = creature.id
         creatureViews.append(creatureView)
         gameContainerView.addSubview(creatureView)
-        creatureView.frame = CGRect(origin: creature.position, size: creatureSize)
+        creatureView.frame = CGRect(origin: creature.position, size: Constants.creatureSize)
 
     }
 

@@ -29,6 +29,8 @@
 		A7B12B722942605100AE7E11 /* RPSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12B712942605100AE7E11 /* RPSEngine.swift */; };
 		A7CB9B6A296B75E000E6086E /* CustomGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB9B69296B75E000E6086E /* CustomGameViewController.swift */; };
 		A7CB9B6C296B765300E6086E /* UIViewController+Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB9B6B296B765300E6086E /* UIViewController+Storyboardable.swift */; };
+		A7CB9B6E296B82A100E6086E /* Settings+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB9B6D296B82A100E6086E /* Settings+Constants.swift */; };
+		A7CB9B70296B8C7D00E6086E /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB9B6F296B8C7D00E6086E /* EmojiView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		A7B12B712942605100AE7E11 /* RPSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSEngine.swift; sourceTree = "<group>"; };
 		A7CB9B69296B75E000E6086E /* CustomGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGameViewController.swift; sourceTree = "<group>"; };
 		A7CB9B6B296B765300E6086E /* UIViewController+Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboardable.swift"; sourceTree = "<group>"; };
+		A7CB9B6D296B82A100E6086E /* Settings+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+Constants.swift"; sourceTree = "<group>"; };
+		A7CB9B6F296B8C7D00E6086E /* EmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 			children = (
 				A7B12B6D29424F0300AE7E11 /* ConfettiView.swift */,
 				A7A95012295FA2EF006BF902 /* MainMenuButton.swift */,
+				A7CB9B6F296B8C7D00E6086E /* EmojiView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 				A7B12B6929424AFA00AE7E11 /* Images.swift */,
 				A7953A492946257D00A1CA3F /* String+Extensions.swift */,
 				A7CB9B6B296B765300E6086E /* UIViewController+Storyboardable.swift */,
+				A7CB9B6D296B82A100E6086E /* Settings+Constants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,7 +256,9 @@
 				A7B12B6A29424AFA00AE7E11 /* Images.swift in Sources */,
 				A71B9129295E725400C9E5DF /* MainMenuViewController.swift in Sources */,
 				A795B20B295E637D00FFC4C4 /* Coordinator.swift in Sources */,
+				A7CB9B6E296B82A100E6086E /* Settings+Constants.swift in Sources */,
 				A795B20D295E6C5800FFC4C4 /* MainCoordinator.swift in Sources */,
+				A7CB9B70296B8C7D00E6086E /* EmojiView.swift in Sources */,
 				A77D03E229456D3700445CDE /* SoundPlayer.swift in Sources */,
 				A7B12B7029425BF800AE7E11 /* RPSCreature.swift in Sources */,
 				A7953A4A2946257D00A1CA3F /* String+Extensions.swift in Sources */,

@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="1036" y="-175"/>
         </scene>
-        <!--View Controller-->
+        <!--Custom Game View Controller-->
         <scene sceneID="QEy-cZ-HB8">
             <objects>
-                <viewController id="9pV-VI-cXg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomGameViewController" id="9pV-VI-cXg" customClass="CustomGameViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X3O-PL-XGa">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
