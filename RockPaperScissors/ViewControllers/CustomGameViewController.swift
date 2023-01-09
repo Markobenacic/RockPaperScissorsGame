@@ -46,8 +46,8 @@ class CustomGameViewController: UIViewController, Storyboardable {
         }
 
         emojisStack.axis = .horizontal
-        
-        emojisStack.distribution = .equalSpacing
+
+        emojisStack.distribution = .fill
 
         rockEmojiView.snp.makeConstraints { make in
             make.width.height.equalTo(60)

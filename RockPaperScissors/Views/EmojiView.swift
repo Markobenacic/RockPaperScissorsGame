@@ -33,7 +33,8 @@ class EmojiView: UIView {
     }
 
     init(type: RPSCreatureType) {
-        imageView = UIImageView(image: Images.image(type: type))
+        imageView = UIImageView(image: Images.imageFrom(emoji: type.emoji))
+        
         imageView.contentMode = .scaleAspectFit
         super.init(frame: .zero)
         addSubview(imageView)
